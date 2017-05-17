@@ -1,0 +1,55 @@
+GIT
+  remote: https://github.com/makevoid/redis-rejson-rb.git
+  revision: 04dd466d6ec3e4088ca4260f27416e5abf9546a6
+  specs:
+    redis_rejson (0.1.0)
+      redis (~> 3.3)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    axiom-types (0.1.1)
+      descendants_tracker (~> 0.0.4)
+      ice_nine (~> 0.11.0)
+      thread_safe (~> 0.3, >= 0.3.1)
+    coercible (1.0.0)
+      descendants_tracker (~> 0.0.1)
+    descendants_tracker (0.0.4)
+      thread_safe (~> 0.3, >= 0.3.1)
+    diff-lcs (1.3)
+    equalizer (0.0.11)
+    ice_nine (0.11.2)
+    inflecto (0.0.2)
+    oj (3.0.8)
+    redis (3.3.3)
+    rspec-core (3.6.0)
+      rspec-support (~> 3.6.0)
+    rspec-expectations (3.6.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.6.0)
+    rspec-mocks (3.6.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.6.0)
+    rspec-support (3.6.0)
+    thread_safe (0.3.6)
+    virtus (1.0.5)
+      axiom-types (~> 0.1)
+      coercible (~> 1.0)
+      descendants_tracker (~> 0.0, >= 0.0.3)
+      equalizer (~> 0.0, >= 0.0.9)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  inflecto
+  oj
+  redis
+  redis_rejson!
+  rspec-core
+  rspec-expectations
+  rspec-mocks
+  virtus
+
+BUNDLED WITH
+   1.14.6
