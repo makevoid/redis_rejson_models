@@ -25,19 +25,19 @@ Model Definition and Instance API by Virtus
 Definition:
 
 ```ruby
-  class Document
-    extend  RediJsonModelLib
-    include RediJsonModelMixin
-    include Virtus.model
+class Document
+  extend  RediJsonModelLib
+  include RediJsonModelMixin
+  include Virtus.model
 
-    attribute :id,        Integer
-    attribute :name,      String
-    attribute :contents,  String
-    
-    def antani
-      # "..."
-    end
+  attribute :id,        Integer
+  attribute :name,      String
+  attribute :contents,  String
+
+  def antani
+    # "..."
   end
+end
 ```
 
 Instance API:
