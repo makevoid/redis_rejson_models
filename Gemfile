@@ -7,6 +7,7 @@ gem "inflecto"
 
 gem "redis_rejson", git: "https://github.com/makevoid/redis-rejson-rb.git"
 
+gem 'blockcypher-ruby', require: 'blockcypher'
 
 group :development do
   gem "rspec-core"

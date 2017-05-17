@@ -17,7 +17,7 @@ RSpec.describe RediJsonModels do
     Redis.new(db: 12).flushdb
   end
 
-  specify "EthModel" do
+  specify "RediJsonModel" do
     Document.new().should be_a Object
   end
 
