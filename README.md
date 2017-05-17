@@ -8,7 +8,7 @@ Note that Re-JSON is a redis module, you need Redis v4+ and that model enabled f
 
 Re-JSON requires Redis v4+
 
-DB API
+### DB API
 
 ```ruby
 Model.get 1 #=> returns an object instance (gets it from ethereum)
@@ -20,9 +20,9 @@ Model.create({}) #=> creates an entry in ethereum
 Model.update(1, {}) #=> updates a record in ethereum
 ```
 
-Model Definition and Instance API by Virtus
+### Model Definition and Instance API by Virtus
 
-Definition:
+#### Definition:
 
 ```ruby
 class Document
@@ -40,7 +40,7 @@ class Document
 end
 ```
 
-Instance API:
+### Instance API:
 
 ```ruby
 doc = Document.new name: "Foo", contents: "Bar123"
