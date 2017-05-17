@@ -48,6 +48,11 @@ doc.name      #=> "foo"
 doc.antani    #=> "..."
 
 doc.save      # TODO: to implement - for now use create/update classmethods
+
+doc.update(name: "bar", contents: "...") # current api
+
+doc1 = Document.get 1
+doc == doc1 # true # TODO: equality
 ```
 ---
 
