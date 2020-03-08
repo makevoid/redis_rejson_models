@@ -14,6 +14,7 @@ GEM
     ice_nine (0.11.2)
     inflecto (0.0.2)
     oj (3.0.8)
+    rake (13.0.1)
     redis (3.3.3)
     redis_rejson (0.2.0)
       redis (~> 3.3)
@@ -39,6 +40,7 @@ PLATFORMS
 DEPENDENCIES
   inflecto
   oj
+  rake
   redis
   redis_rejson (>= 0.2.0)
   rspec-core
