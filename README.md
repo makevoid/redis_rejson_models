@@ -11,13 +11,13 @@ Re-JSON requires Redis v4+
 ### DB API
 
 ```ruby
-Model.get 1 #=> returns an object instance (gets it from ethereum)
+Model.get 1 #=> returns an object instance (gets it from redis)
 
 Model.all #=> returns an array of Model object instances
 
-Model.create({}) #=> creates an entry in ethereum
+Model.create({}) #=> creates an entry in redis
 
-Model.update(1, {}) #=> updates a record in ethereum
+Model.update(1, {}) #=> updates a record in redis
 ```
 
 ### Model Definition and Instance API by Virtus
