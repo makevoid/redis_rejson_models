@@ -1,12 +1,11 @@
 # RediJsonModels
 
-RediJSONModels
-
 Document-like ORM based on Redis key value store - uses Redis Re-JSON for full json manipulation 
 
-Note that Re-JSON is a redis module, you need Redis v4+ and that model enabled for this to work (otherwise if you don't need Re-JSON you can also configure this repo to run only as key value but you will lose the full json manipulations that leads to faster partial updates on nested data structures, the ability to manipulate counters, etc..)
+### Requirements
 
-Re-JSON requires Redis v4+
+- Redis (v4+)
+- Re-JSON module installed
 
 ### DB API
 
@@ -54,6 +53,7 @@ doc.update(name: "bar", contents: "...") # current api
 doc1 = Document.get 1
 doc == doc1 # true # TODO: equality
 ```
+
 ---
 
 Enjoy!
