@@ -3,7 +3,7 @@ source "https://rubygems.org"
 gem "redis"
 gem "virtus"
 gem "oj"
-gem "inflecto"
+gem "dry-inflector", "~> 0.2.0"
 
 gem "redis_rejson", ">= 0.2.0"
 

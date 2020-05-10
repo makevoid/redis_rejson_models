@@ -12,16 +12,16 @@ module RediJsonModels
     end
 
     def self.[](key)
-      val = redis.json_get key
-      Oj.load val if val
+      redis.json_get key
     end
 
     def self.[]=(key, val)
-      redis.json_set key, Oj.dump(val)
+      redis.json_set key, val
     end
   end
 
   module RediJsonModelLib
+    INFLECTOR = Dry::Inflector.new
 
     def all
       1.upto(count).map do |entry_id|
@@ -57,7 +57,7 @@ module RediJsonModels
     end
 
     def resource
-      Inflecto.pluralize model_name
+      INFLECTOR.pluralize model_name
     end
 
     private
