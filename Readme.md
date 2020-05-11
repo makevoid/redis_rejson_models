@@ -1,6 +1,6 @@
 # RediJsonModels
 
-Document-like ORM based on Redis key value store - uses Redis Re-JSON for full json manipulation 
+Document-like ORM based on Redis key value store - uses Redis Re-JSON for full json manipulation
 
 ### Requirements
 
@@ -53,6 +53,28 @@ doc.update(name: "bar", contents: "...") # current api
 doc1 = Document.get 1
 doc == doc1 # true # TODO: equality
 ```
+
+### Run local Redis (+ Re-JSON module) locally via Docker:
+
+in this repo run:
+
+```
+docker-compose up
+```
+
+Which use the docker-compose.yml to start your redis.
+
+
+### Run specs
+
+(you need to run a local redis + rejson service - explained above)
+
+Run:
+
+```
+rake spec
+```
+
 
 ---
 

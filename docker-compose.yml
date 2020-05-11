@@ -5,3 +5,10 @@ services:
     image: redislabs/rejson:latest
     ports:
     - 6379:6379
+    volumes:
+      - redis_data:/data/redis
+    entrypoint: redis-server --appendonly yes
+    restart: always
+
+volumes:
+  redis_data:
