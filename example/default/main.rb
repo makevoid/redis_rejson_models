@@ -34,6 +34,10 @@ doc = Document.get 1
 puts doc.name      #=> "foo"
 puts doc.antani    #=> "..."
 
+# # get a single json value attribute - very fast
+# value = Document.get_attr 1, "name"
+# puts value
+
 # # class method based create api
 # doc = Document.create name: "Foo", contents: "Bar123"
 # puts doc.name      #=> "foo"

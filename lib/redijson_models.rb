@@ -39,16 +39,21 @@ module RediJsonModels
     def get(id)
       data = RJ["#{resource}:#{id}"]
       return unless data
-      data = Oj.load data
       new data
+    end
+
+    def get_attr(id, attr)
+      key = "#{resource}:#{id}"
+      data = RJ.redis.json_get key, ".name"
+      return NilValue.new unless data
+      data
     end
 
     def create(attrs)
       id = incr
       attrs.merge! id: id
       obj  = new attrs
-      data = Oj.dump obj.attributes
-      RJ["#{resource}:#{id}"] = data
+      RJ["#{resource}:#{id}"] = obj.attributes
       obj
     end
 
@@ -83,8 +88,7 @@ module RediJsonModels
       attrs = model.attributes
       attrs.merge! attrs_new
       obj   = klass.new attrs
-      data  = Oj.dump obj.attributes
-      RJ["#{self.class.resource}:#{id}"] = data
+      RJ["#{self.class.resource}:#{id}"] = obj.attributes
       obj
     end
 
@@ -93,8 +97,7 @@ module RediJsonModels
       id = klass.send :incr
       attrs = attributes
       attrs.merge! id: id
-      data  = Oj.dump attrs
-      RJ["#{self.class.resource}:#{id}"] = data
+      RJ["#{self.class.resource}:#{id}"] = attrs
       self
     end
 

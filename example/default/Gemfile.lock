@@ -1,3 +1,13 @@
+PATH
+  remote: /home/makevoid/apps/redijson_models
+  specs:
+    redijson_models (0.7.1)
+      dry-inflector (~> 0.2.0)
+      oj (~> 3.10.6)
+      redis (~> 3.3.0)
+      rejson-rb (~> 1.0.0)
+      virtus (~> 1.0.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -14,12 +24,6 @@ GEM
     ice_nine (0.11.2)
     json (2.3.0)
     oj (3.10.6)
-    redijson_models (0.7.1)
-      dry-inflector (~> 0.2.0)
-      oj (~> 3.10.6)
-      redis (~> 3.3.0)
-      rejson-rb (~> 1.0.0)
-      virtus (~> 1.0.5)
     redis (3.3.5)
     rejson-rb (1.0.0)
       json (~> 2.0)
@@ -35,7 +39,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  redijson_models (~> 0.7.1)
+  redijson_models!
   redis
 
 BUNDLED WITH

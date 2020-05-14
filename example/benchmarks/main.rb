@@ -22,12 +22,15 @@ class Document
 end
 
 Benchmark.ips do |x|
-  x.config(:time => 10, :warmup => 2)
+  x.config(time: 6, warmup: 1)
   x.report("create") do
     Document.create name: "foo", contents: "bar"
   end
   x.report("get") do
     Document.get 1
+  end
+  x.report("get_attr") do
+    Document.get_attr 1, "name"
   end
   x.report("save") do
     doc = Document.new name: "foo", contents: "bar"
