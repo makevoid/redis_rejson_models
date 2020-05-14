@@ -13,20 +13,22 @@ GEM
     dry-inflector (0.2.0)
     equalizer (0.0.11)
     ice_nine (0.11.2)
-    oj (3.0.8)
+    json (2.3.0)
+    oj (3.10.6)
     rake (13.0.1)
-    redis (3.3.3)
-    redis_rejson (0.2.0)
-      redis (~> 3.3)
-    rspec-core (3.6.0)
-      rspec-support (~> 3.6.0)
-    rspec-expectations (3.6.0)
+    redis (3.3.5)
+    rejson-rb (1.0.0)
+      json (~> 2.0)
+      redis (~> 3.0)
+    rspec-core (3.9.2)
+      rspec-support (~> 3.9.3)
+    rspec-expectations (3.9.2)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.6.0)
-    rspec-mocks (3.6.0)
+      rspec-support (~> 3.9.0)
+    rspec-mocks (3.9.1)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.6.0)
-    rspec-support (3.6.0)
+      rspec-support (~> 3.9.0)
+    rspec-support (3.9.3)
     thread_safe (0.3.6)
     virtus (1.0.5)
       axiom-types (~> 0.1)
@@ -39,14 +41,14 @@ PLATFORMS
 
 DEPENDENCIES
   dry-inflector (~> 0.2.0)
-  oj
+  oj (~> 3.10.6)
   rake
-  redis
-  redis_rejson (>= 0.2.0)
+  redis (~> 3.0)
+  rejson-rb (~> 1.0.0)
   rspec-core
   rspec-expectations
   rspec-mocks
-  virtus
+  virtus (~> 1.0.5)
 
 BUNDLED WITH
    2.1.4
