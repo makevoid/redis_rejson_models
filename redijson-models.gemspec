@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.platform    = Gem::Platform::RUBY
   spec.name        = 'redijson_models'
   # spec.version     = RediJsonModels::VERSION
-  spec.version     = '0.8.0'
+  spec.version     = '0.8.1'
   spec.summary     = 'Document-like ORM based on Redis key value store'
   spec.description = 'Document-like ORM based on Redis key value store - uses Redis Re-JSON for full json manipulation'
 
