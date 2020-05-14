@@ -1,5 +1,7 @@
+### install:
+
+    bundle
+
 ### run:
 
-```rb
-rake
-```
+    rake
