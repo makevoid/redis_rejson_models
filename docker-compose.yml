@@ -7,8 +7,8 @@ services:
     - 6379:6379
     volumes:
       - redis_data:/data/redis
-    entrypoint: redis-server --appendonly yes
     restart: always
+    # TODO: enable appendonly + load rejson module - note: entrypoint: redis-server --appendonly yes
 
 volumes:
   redis_data:
