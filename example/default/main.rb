@@ -25,9 +25,14 @@ end
 doc = Document.new name: "Foo", contents: "Bar123"
 puts doc.name      #=> "foo"
 puts doc.antani    #=> "..."
+puts doc.name = "Baz"
 doc.save
 puts "saved"
 puts "---\n"
+
+doc = Document.get 1
+puts doc.name      #=> "foo"
+puts doc.antani    #=> "..."
 
 # # class method based create api
 # doc = Document.create name: "Foo", contents: "Bar123"
@@ -35,9 +40,6 @@ puts "---\n"
 # puts doc.antani    #=> "..."
 # puts "---\n"
 
-Document.update 1, name: "Aloha!"
-puts "updated!"
-
-doc = Document.get 1
-puts doc.name      #=> "foo"
-puts doc.antani    #=> "..."
+# # class method based update api
+# Document.update 1, name: "Aloha!"
+# puts "updated!"
