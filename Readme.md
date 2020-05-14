@@ -43,15 +43,13 @@ end
 
 ```ruby
 doc = Document.new name: "Foo", contents: "Bar123"
-doc.name      #=> "foo"
-doc.antani    #=> "..."
+puts doc.name      #=> "foo"
+puts doc.antani    #=> "..."
+doc.save # saves the record, gives an auto increment id (example: 1)
 
-doc.save      # TODO: to implement - for now use create/update classmethods
-
-doc.update(name: "bar", contents: "...") # current api
-
-doc1 = Document.get 1
-doc == doc1 # true # TODO: equality
+doc = Document.get doc.id
+puts doc.name      #=> "foo"
+puts doc.antani    #=> "..."
 ```
 
 ### Run local Redis (+ Re-JSON module) locally via Docker:
