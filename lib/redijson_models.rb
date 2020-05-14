@@ -96,8 +96,9 @@ module RediJsonModels
       klass = self.class
       id = klass.send :incr
       attrs = attributes
-      attrs.merge! id: id
+      attrs.merge! "id" => id
       RJ["#{self.class.resource}:#{id}"] = attrs
+      self.id = id
       self
     end
 

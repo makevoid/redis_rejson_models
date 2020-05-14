@@ -80,6 +80,19 @@ RSpec.describe RediJsonModels do
       value.should == "aloha"
     end
 
+    specify "save" do
+      doc = Document.new name: "Foo", contents: "Bar123"
+      doc.name = "Baz"
+      doc.id.should be_nil
+
+      doc.save
+      doc.id.should_not be_nil
+
+      doc = Document.get doc.id
+      doc.name.should == "Baz"
+    end
+
+
     specify "json" do
       data = RJ["documents:1"]
       data.should == { "contents" => "bar", "id" => 1, "name" => "aloha" }
