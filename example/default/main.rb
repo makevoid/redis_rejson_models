@@ -25,7 +25,7 @@ end
 doc = Document.new name: "Foo", contents: "Bar123"
 puts doc.name      #=> "foo"
 puts doc.antani    #=> "..."
-puts doc.name = "Baz"
+doc.name = "Baz"
 doc.save
 puts "saved"
 puts "---\n"
