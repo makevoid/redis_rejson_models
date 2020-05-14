@@ -75,6 +75,11 @@ RSpec.describe RediJsonModels do
       doc.name.should == "aloha"
     end
 
+    specify "get_attr" do
+      value = Document.get_attr 1, "name"
+      value.should == "aloha"
+    end
+
     specify "json" do
       data = RJ["documents:1"]
       data.should == { "contents" => "bar", "id" => 1, "name" => "aloha" }
