@@ -2,6 +2,7 @@ require_relative 'env'
 
 module RediJsonModels
 
+  # low level API
   class RJ
     def self.configure(redis:)
       @@redis = redis
@@ -12,11 +13,11 @@ module RediJsonModels
     end
 
     def self.[](key)
-      redis.json_get key
+      redis.json_get key, Rejson::Path.root_path
     end
 
     def self.[]=(key, val)
-      redis.json_set key, val
+      redis.json_set key, Rejson::Path.root_path, val
     end
   end
 
@@ -49,8 +50,6 @@ module RediJsonModels
       obj
     end
 
-    # TODO: modify just one attribute
-    #
     def update(id, attrs)
       resource = get id
       resource.update attrs
@@ -74,7 +73,9 @@ module RediJsonModels
   end
 
   module RediJsonModelMixin
+
     def update(attrs_new)
+      raise "Can't update a resource without an `id`" unless id
       klass = self.class
       model = klass.get id
       attrs = model.attributes
@@ -84,6 +85,17 @@ module RediJsonModels
       RJ["#{self.class.resource}:#{id}"] = data
       obj
     end
+
+    def save
+      klass = self.class
+      id = klass.send :incr
+      attrs = attributes
+      attrs.merge! id: id
+      data  = Oj.dump attrs
+      RJ["#{self.class.resource}:#{id}"] = data
+      self
+    end
+
   end
 
 end
