@@ -1,0 +1,7 @@
+source "https://rubygems.org"
+
+gem "redis"
+
+gem 'redijson_models', '~> 0.7.1'
+
+gem 'benchmark-ips', require: 'benchmark/ips'
