@@ -6,7 +6,7 @@ gem "oj", "~> 3.10.6"
 gem "dry-inflector", "~> 0.2.0", require: "dry/inflector"
 
 gem "rejson-rb", "~> 1.0.0", require: "rejson"
-# gem "redis_rejson", ">= 0.2.0"
+# gem "redis_rejson", "~> 0.2.0"
 
 group :development do
   gem "rake"

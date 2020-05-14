@@ -23,4 +23,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency('oj', '~> 3.10.6')
   spec.add_dependency('dry-inflector', '~> 0.2.0')
   spec.add_dependency('rejson-rb', '~> 1.0.0')
+  # spec.add_dependency('redis_rejson', '~> 0.2.0') # old dependency, swapped with rejson-rb
 end

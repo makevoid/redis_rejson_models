@@ -4,8 +4,8 @@ require 'redis'
 require 'virtus'
 require 'oj'
 require 'dry-inflector'
-# require 'redis_rejson'
 require 'rejson'
+# require 'redis_rejson' # a little bit faster but has less features than the above
 
 module RediJsonModels
   REDIS_DB = ENV["REDIS_DB"]

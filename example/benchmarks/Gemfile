@@ -3,5 +3,6 @@ source "https://rubygems.org"
 gem "redis"
 
 gem 'redijson_models', '~> 0.7.1'
+# gem "redijson_models", path: File.expand_path("../../../redijson_models")
 
 gem 'benchmark-ips', require: 'benchmark/ips'

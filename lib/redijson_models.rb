@@ -13,10 +13,12 @@ module RediJsonModels
     end
 
     def self.[](key)
+      # redis.json_get key
       redis.json_get key, Rejson::Path.root_path
     end
 
     def self.[]=(key, val)
+      # redis.json_set key, val
       redis.json_set key, Rejson::Path.root_path, val
     end
   end
