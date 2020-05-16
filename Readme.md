@@ -2,6 +2,19 @@
 
 Document-like ORM based on Redis key value store - uses Redis Re-JSON for full json manipulation
 
+### Install
+
+Add to your gemfile:
+
+```rb
+gem 'redijson_models', '~> 0.8.1'
+```
+
+Or without bundler, run in your shell:
+
+    gem i redijson_models
+
+
 ### Requirements
 
 - Redis (v4+)
@@ -61,6 +74,26 @@ docker-compose up
 ```
 
 Which use the docker-compose.yml to start your redis.
+
+
+### Set up your Redis and RJSON
+
+```rb
+# sample environment setup
+require 'bundler'
+Bundler.require :default
+
+# setup redis
+R = Redis.new 
+
+# load and configure redis with rejson models
+include RediJsonModels
+RJ.configure redis: R
+
+class Document
+  # ...
+end
+```
 
 
 ### Run specs
