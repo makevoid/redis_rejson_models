@@ -87,9 +87,14 @@ RSpec.describe RediJsonModels do
 
       doc.save
       doc.id.should_not be_nil
+      id = doc.id
+
+      doc.name = "Baz2"
+      doc.save
+      doc.id.should be id
 
       doc = Document.get doc.id
-      doc.name.should == "Baz"
+      doc.name.should == "Baz2"
     end
 
 

@@ -94,9 +94,14 @@ module RediJsonModels
 
     def save
       klass = self.class
-      id = klass.send :incr
       attrs = attributes
-      attrs.merge! "id" => id
+      id = attrs[:id]
+      unless id
+        entry_id = klass.send :incr
+        attrs.merge! "id" => entry_id
+        id = entry_id
+      end
+
       RJ["#{self.class.resource}:#{id}"] = attrs
       self.id = id
       self
