@@ -1,6 +1,6 @@
 require_relative 'env'
 
-module RediJsonModels
+module RedisRejsonModels
 
   # low level API
   class RJ
@@ -23,7 +23,7 @@ module RediJsonModels
     end
   end
 
-  module RediJsonModelLib
+  module RedisRejsonModelLib
     INFLECTOR = Dry::Inflector.new
 
     def all
@@ -79,7 +79,7 @@ module RediJsonModels
 
   end
 
-  module RediJsonModelMixin
+  module RedisRejsonModelMixin
 
     def update(attrs_new)
       raise "Can't update a resource without an `id`" unless id
