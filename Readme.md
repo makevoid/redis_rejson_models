@@ -144,6 +144,8 @@ class Document
 end
 ```
 
+Check a sample project contained in the `example` dir of this repo: https://github.com/makevoid/redis_rejson_models/tree/master/example/default
+
 
 ### Run specs
 
