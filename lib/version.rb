@@ -1,3 +1,3 @@
-module RediJsonModels
-  VERSION = "0.9.0"
+module RedisRejsonModels
+  VERSION = "0.9.5"
 end
