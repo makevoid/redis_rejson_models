@@ -1,4 +1,4 @@
-# RediJsonModels
+# RedisRejsonModels
 
 Document-like ORM based on Redis key value store - uses Redis Re-JSON for full json manipulation
 
@@ -7,12 +7,12 @@ Document-like ORM based on Redis key value store - uses Redis Re-JSON for full j
 Add to your gemfile:
 
 ```rb
-gem 'redijson_models', '~> 0.8.1'
+gem 'redis_rejson_models', '~> 0.9.5'
 ```
 
 Or without bundler, run in your shell:
 
-    gem i redijson_models
+    gem i redis_rejson_models
 
 
 ### Requirements
@@ -32,15 +32,15 @@ Model.create({}) #=> creates an entry in redis
 Model.update(1, {}) #=> updates a record in redis
 ```
 
-### Model Definition and Instance API by Virtus
+### Model Definition and Instance API by the `shallow_attributes` gem
 
 #### Definition:
 
 ```ruby
 class Document
-  extend  RediJsonModelLib
-  include RediJsonModelMixin
-  include Virtus.model
+  extend  RedisRejsonModelLib
+  include RedisRejsonModelMixin
+  include ShallowAttributes
 
   attribute :id,        Integer
   attribute :name,      String
@@ -84,10 +84,10 @@ require 'bundler'
 Bundler.require :default
 
 # setup redis
-R = Redis.new 
+R = Redis.new
 
 # load and configure redis with rejson models
-include RediJsonModels
+include RedisRejsonModels
 RJ.configure redis: R
 
 class Document
