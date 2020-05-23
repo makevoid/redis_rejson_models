@@ -4,13 +4,13 @@ Bundler.require :default
 R = Redis.new db: 12
 R.flushdb
 
-include RediJsonModels
+include RedisRejsonModels
 RJ.configure redis: R
 
 class Document
-  extend  RediJsonModelLib
-  include RediJsonModelMixin
-  include Virtus.model
+  extend  RedisRejsonModelLib
+  include RedisRejsonModelMixin
+  include ShallowAttributes
 
   attribute :id,        Integer
   attribute :name,      String
