@@ -47,7 +47,7 @@ class Document
   attribute :contents,  String
 
   def antani
-    # "..."
+    "hi #{name}, what do you think about #{contents} ?"
   end
 end
 ```
