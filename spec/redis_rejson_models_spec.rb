@@ -1,11 +1,11 @@
 require "spec_helper"
 
-RSpec.describe RediJsonModels do
+RSpec.describe RedisRejsonModels do
 
   class Document
-    extend  RediJsonModelLib
-    include RediJsonModelMixin
-    include Virtus.model
+    extend  RedisRejsonModelLib
+    include RedisRejsonModelMixin
+    include ShallowAttributes
 
     attribute :id,        Integer
     attribute :name,      String
@@ -17,7 +17,7 @@ RSpec.describe RediJsonModels do
     Redis.new(db: 12).flushdb
   end
 
-  specify "RediJsonModel" do
+  specify "RedisRejsonModel" do
     Document.new().should be_a Object
   end
 
