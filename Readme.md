@@ -20,19 +20,21 @@ Or without bundler, run in your shell:
 - Redis (v4+)
 - Re-JSON module installed
 
-### DB API
+
+### Instance API:
 
 ```ruby
-Model.get 1 #=> returns an object instance (gets it from redis)
+doc = Document.new name: "Foo", contents: "Bar123"
+puts doc.name      #=> "foo"
+puts doc.antani    #=> "..."
+doc.save # saves the record, gives an auto increment id (example: 1)
 
-Model.all #=> returns an array of Model object instances
-
-Model.create({}) #=> creates an entry in redis
-
-Model.update(1, {}) #=> updates a record in redis
+doc = Document.get doc.id
+puts doc.name      #=> "foo"
+puts doc.antani    #=> "..."
 ```
 
-### Model Definition and Instance API by the `shallow_attributes` gem
+Note: We use the `shallow_attributes` gem (already required by `redis_rejson_models` that provides the main ORM Model-like familiar ruby API that most ruby ORMs have / used to have)
 
 #### Definition:
 
@@ -52,18 +54,6 @@ class Document
 end
 ```
 
-### Instance API:
-
-```ruby
-doc = Document.new name: "Foo", contents: "Bar123"
-puts doc.name      #=> "foo"
-puts doc.antani    #=> "..."
-doc.save # saves the record, gives an auto increment id (example: 1)
-
-doc = Document.get doc.id
-puts doc.name      #=> "foo"
-puts doc.antani    #=> "..."
-```
 
 ### Run local Redis (+ Re-JSON module) locally via Docker:
 
