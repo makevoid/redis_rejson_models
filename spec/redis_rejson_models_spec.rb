@@ -1,7 +1,6 @@
 require "spec_helper"
 
 RSpec.describe RedisRejsonModels do
-
   class Document
     extend  RedisRejsonModelLib
     include RedisRejsonModelMixin
@@ -18,7 +17,7 @@ RSpec.describe RedisRejsonModels do
   end
 
   specify "RedisRejsonModel" do
-    Document.new().should be_a Object
+    Document.new.should be_a Object
   end
 
   specify "model attributes" do
@@ -39,7 +38,6 @@ RSpec.describe RedisRejsonModels do
   end
 
   describe "CRUD" do
-
     specify "create" do
       Document.create name: "foo", contents: "bar"
       Document.create name: "baz", contents: "123"
@@ -62,7 +60,7 @@ RSpec.describe RedisRejsonModels do
       doc.contents.should == "bar"
 
       doc = Document.get 2
-      doc.id.should       == 2
+      doc.id.should == 2
     end
 
     specify "update" do
@@ -97,11 +95,9 @@ RSpec.describe RedisRejsonModels do
       doc.name.should == "Baz2"
     end
 
-
     specify "json" do
       data = RJ["documents:1"]
       data.should == { "contents" => "bar", "id" => 1, "name" => "aloha" }
     end
-
   end
 end

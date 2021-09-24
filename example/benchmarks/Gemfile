@@ -5,4 +5,4 @@ gem "redis"
 # gem 'redis_rejson_models', '~> 0.8.0'
 gem "redis_rejson_models", path: File.expand_path("../../../redis_rejson_models")
 
-gem 'benchmark-ips', require: 'benchmark/ips'
+gem "benchmark-ips", require: "benchmark/ips"

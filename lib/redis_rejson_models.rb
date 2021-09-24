@@ -1,7 +1,6 @@
-require_relative 'env'
+require_relative "env"
 
 module RedisRejsonModels
-
   # low level API
   class RJ
     def self.configure(redis:)
@@ -33,7 +32,7 @@ module RedisRejsonModels
     end
 
     def count
-      ( RJ["#{resource}:count"] || 0 ).to_i
+      (RJ["#{resource}:count"] || 0).to_i
     end
 
     def get(id)
@@ -52,7 +51,7 @@ module RedisRejsonModels
     def create(attrs)
       id = incr
       attrs.merge! id: id
-      obj  = new attrs
+      obj = new attrs
       RJ["#{resource}:#{id}"] = obj.attributes
       obj
     end
@@ -74,20 +73,18 @@ module RedisRejsonModels
     end
 
     def model_name
-      self.name.downcase
+      name.downcase
     end
-
   end
 
   module RedisRejsonModelMixin
-
     def update(attrs_new)
       raise "Can't update a resource without an `id`" unless id
       klass = self.class
       model = klass.get id
       attrs = model.attributes
       attrs.merge! attrs_new
-      obj   = klass.new attrs
+      obj = klass.new attrs
       RJ["#{self.class.resource}:#{id}"] = obj.attributes
       obj
     end
@@ -106,7 +103,5 @@ module RedisRejsonModels
       self.id = id
       self
     end
-
   end
-
 end

@@ -1,4 +1,4 @@
-require 'bundler'
+require "bundler"
 Bundler.require :default
 
 R = Redis.new db: 12

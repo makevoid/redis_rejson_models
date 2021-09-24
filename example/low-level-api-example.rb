@@ -1,8 +1,8 @@
 # simplest example
 
-require 'bundler'
+require "bundler"
 Bundler.require :default
-require_relative '../lib/redis_rejson_models'
+require_relative "../lib/redis_rejson_models"
 
 R = Redis.new db: 12
 

@@ -1,10 +1,10 @@
 # require 'bundler/setup'
 # Bundler.require :default
-require 'redis'
-require 'shallow_attributes'
+require "redis"
+require "shallow_attributes"
 # require 'virtus' # old dependency
-require 'dry-inflector'
-require 'rejson'
+require "dry-inflector"
+require "rejson"
 # require 'redis_rejson' # old dependency - less mature and featured than `rejson-rb`
 
 module RedisRejsonModels
